@@ -10,7 +10,6 @@ model.summary()
 coreml_model = coremltools.converters.keras.convert(
   model,
   input_names = 'image',
-  image_input_names = 'image',
-  class_labels = ['carrots', 'kale'])
+  image_input_names = 'image')
 
 coreml_model.save("vege_model_1.mlmodel")
