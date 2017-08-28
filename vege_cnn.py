@@ -48,8 +48,8 @@ img_width, img_height = 150, 150
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 1307
-nb_validation_samples = 181
+num_train_samples = 1307
+num_validation_samples = 181
 epochs = 25
 batch_size = 16
 
@@ -107,10 +107,10 @@ validation_generator = test_datagen.flow_from_directory(
 
 model.fit_generator(
   train_generator,
-  steps_per_epoch=nb_train_samples // batch_size,
+  steps_per_epoch=num_train_samples // batch_size,
   epochs=epochs,
   validation_data=validation_generator,
-  validation_steps=nb_validation_samples // batch_size)
+  validation_steps=num_validation_samples // batch_size)
 
 # model.save_weights('carrot_kale_1_weights.h5')
 model.save('vege_model_1.h5')
