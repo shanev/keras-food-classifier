@@ -75,10 +75,10 @@ else:
   model.add(Dense(64))
   model.add(Activation('relu'))
   model.add(Dropout(0.5))
-  model.add(Dense(1))
-  model.add(Activation('sigmoid'))
+  model.add(Dense(2))
+  model.add(Activation('softmax'))
 
-  model.compile(loss='binary_crossentropy',
+  model.compile(loss='categorical_crossentropy',
     optimizer='rmsprop',
     metrics=['accuracy'])
 
@@ -96,14 +96,12 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 train_generator = train_datagen.flow_from_directory(
   train_data_dir,
   target_size=(img_width, img_height),
-  batch_size=batch_size,
-  class_mode='binary')
+  batch_size=batch_size)
 
 validation_generator = test_datagen.flow_from_directory(
   validation_data_dir,
   target_size=(img_width, img_height),
-  batch_size=batch_size,
-  class_mode='binary')
+  batch_size=batch_size)
 
 model.fit_generator(
   train_generator,
@@ -113,4 +111,4 @@ model.fit_generator(
   validation_steps=num_validation_samples // batch_size)
 
 # model.save_weights('carrot_kale_1_weights.h5')
-model.save('vege_model_1.h5')
+model.save('VegeModel3.h5')
