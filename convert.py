@@ -42,9 +42,9 @@ from keras.models import load_model
 #     convert(args.infile, args.outfile, labels, args.author, args.license, args.description)
 
 coreml_model = coremltools.converters.keras.convert(
-  'vege_model_2.h5',
+  'VegeModel3.h5',
   input_names = 'image',
   image_input_names = 'image',
   class_labels = ['carrots', 'kale'])
 
-coreml_model.save('vege_model_2.mlmodel')
+coreml_model.save('VegeModel3.mlmodel')
