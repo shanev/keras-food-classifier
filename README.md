@@ -10,7 +10,7 @@ Currently used for training data at `data/train`.
 
 `wget -O list_of_images.txt "http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n02139199"`
 
-`wget -i list_of_images.txt`
+`wget --timeout=1 --waitretry=0 --tries=2 --retry-connrefused -i list_of_images.txt`
 
 ### Google Images
 
