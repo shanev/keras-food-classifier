@@ -10,8 +10,8 @@ def get_soup(url,header):
     return BeautifulSoup(urllib2.urlopen(urllib2.Request(url,headers=header)),'html.parser')
 
 
-query = "kale" # you can change the query for the image  here
-image_type="kale"
+query = "avocado" # you can change the query for the image  here
+image_type="avocado"
 # query= query.split()
 # query='+'.join(query)
 url="https://www.google.com/search?q="+query+"&source=lnms&tbm=isch"
