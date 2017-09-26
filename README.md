@@ -1,6 +1,6 @@
 # Vegetable Classifier CNN in Keras
 
-Currently only works for carrots and kale.
+Food classifier for souschef.ai.
 
 ## Training Data
 
@@ -8,9 +8,9 @@ Currently only works for carrots and kale.
 
 Currently used for training data at `data/train`.
 
-wget -O list_of_images.txt "http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n02139199"
+`wget -O list_of_images.txt "http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n02139199"`
 
-wget -i list_of_images.txt
+`wget -i list_of_images.txt`
 
 ### Google Images
 
