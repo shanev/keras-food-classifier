@@ -111,4 +111,4 @@ model.fit_generator(
   validation_steps=num_validation_samples // batch_size)
 
 # model.save_weights('carrot_kale_1_weights.h5')
-model.save('VegeModel3.h5')
+model.save('VegeModel4.h5')
