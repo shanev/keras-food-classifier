@@ -50,6 +50,7 @@ train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
 num_train_samples = 1760
 num_validation_samples = 240
+num_classes = 3
 epochs = 10
 batch_size = 16
 
@@ -75,7 +76,7 @@ else:
   model.add(Dense(64))
   model.add(Activation('relu'))
   model.add(Dropout(0.5))
-  model.add(Dense(3))
+  model.add(Dense(num_classes))
   model.add(Activation('softmax'))
 
   model.compile(loss='categorical_crossentropy',
