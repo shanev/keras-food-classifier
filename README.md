@@ -35,3 +35,7 @@ https://willowtreeapps.com/ideas/integrating-trained-models-into-your-ios-app-us
 https://www.tooploox.com/blog/custom-classifiers-in-ios11-using-coreml-and-vision
 
 https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac
+
+http://machinethink.net/blog/yolo-coreml-versus-mps-graph/
+
+http://machinethink.net/blog/help-core-ml-gives-wrong-output/
