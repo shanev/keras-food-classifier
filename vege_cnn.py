@@ -75,7 +75,7 @@ else:
   model.add(Dense(64))
   model.add(Activation('relu'))
   model.add(Dropout(0.5))
-  model.add(Dense(2))
+  model.add(Dense(3))
   model.add(Activation('softmax'))
 
   model.compile(loss='categorical_crossentropy',
