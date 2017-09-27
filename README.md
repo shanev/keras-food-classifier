@@ -20,6 +20,8 @@ Use downloader in `downloader/google.py`.
 
 ## Links
 
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+
 https://github.com/fchollet/keras/issues/4465
 
 http://www.codesofinterest.com/2017/08/bottleneck-features-multi-class-classification-keras.html
