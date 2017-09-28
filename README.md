@@ -39,3 +39,5 @@ https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4
 http://machinethink.net/blog/yolo-coreml-versus-mps-graph/
 
 http://machinethink.net/blog/help-core-ml-gives-wrong-output/
+
+https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
