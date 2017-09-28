@@ -46,6 +46,6 @@ coreml_model = coremltools.converters.keras.convert(
   image_scale=1./255,
   input_names = 'image',
   image_input_names = 'image',
-  class_labels = ['carrots', 'kale', 'avocado'])
+  class_labels = ['avocado','carrots','kale'])
 
 coreml_model.save('VegeModel4.mlmodel')
