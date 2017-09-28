@@ -41,7 +41,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
-
+from pprint import pprint
 
 # dimensions of our images.
 img_width, img_height = 150, 150
@@ -103,6 +103,9 @@ validation_generator = test_datagen.flow_from_directory(
   validation_data_dir,
   target_size=(img_width, img_height),
   batch_size=batch_size)
+
+# print order of class indices needed for conversion to CoreML
+pprint(validation_generator.class_indices)
 
 model.fit_generator(
   train_generator,
