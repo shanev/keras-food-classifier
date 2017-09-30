@@ -41,15 +41,12 @@ from keras.models import load_model
 
 #     convert(args.infile, args.outfile, labels, args.author, args.license, args.description)
 
-# model = load_model('VegeModel5.h5')
-# model.summary()
+model = load_model('VegeModel5.h5')
+model.summary()
 
 coreml_model = coremltools.converters.keras.convert(
   'VegeModel5.h5',
   image_scale=1./255,
-  # red_bias=-123.68,
-  # green_bias=-116.78,
-  # blue_bias=-103.94,
   input_names = 'image',
   image_input_names = 'image',
   class_labels = ['avocado','carrots','kale'])
