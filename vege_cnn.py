@@ -80,7 +80,7 @@ else:
   model.add(Activation('softmax'))
 
   model.compile(loss='categorical_crossentropy',
-    optimizer='rmsprop',
+    optimizer='adam',
     metrics=['accuracy'])
 
 # this is the augmentation configuration we will use for training
