@@ -14,7 +14,7 @@ validation_data_dir = 'data/validation'
 num_train_samples = 1760
 num_validation_samples = 240
 num_classes = 3
-epochs = 50
+epochs = 10
 batch_size = 16
 
 # create the base pre-trained model
