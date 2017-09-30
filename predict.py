@@ -22,8 +22,15 @@ model = load_model('./models/VegeModel5.h5')
 img = load_img('./data/train/avocado/avocado10.jpg', False, target_size=(img_width, img_height))
 x = img_to_array(img, data_format='channels_last')
 x = x / 255
-x = x.reshape((1,) + x.shape)
-print(x.shape)
+x = x.reshape((1,) + x.shape) # (1, 150, 150, 3)
+# print(x.shape)
+pred = model.predict(x)
+print(pred)
+
+img = load_img('./data/train/avocado/avocado6.jpg', False, target_size=(img_width, img_height))
+x = img_to_array(img, data_format='channels_last')
+x = x / 255
+x = x.reshape((1,) + x.shape) # (1, 150, 150, 3)
 pred = model.predict(x)
 print(pred)
 
