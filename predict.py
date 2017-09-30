@@ -47,3 +47,24 @@ x = x / 255
 x = x.reshape((1,) + x.shape)
 pred = model.predict(x)
 print(pred)
+
+img = load_img('./data/fake/fake1.jpg', False, target_size=(img_width, img_height))
+x = img_to_array(img)
+x = x / 255
+x = x.reshape((1,) + x.shape)
+pred = model.predict(x)
+print(pred)
+
+img = load_img('./data/fake/fake2.jpg', False, target_size=(img_width, img_height))
+x = img_to_array(img)
+x = x / 255
+x = x.reshape((1,) + x.shape)
+pred = model.predict(x)
+print(pred)
+
+img = load_img('./data/fake/fake3.png', False, target_size=(img_width, img_height))
+x = img_to_array(img)
+x = x / 255
+x = x.reshape((1,) + x.shape)
+pred = model.predict(x)
+print(pred)
