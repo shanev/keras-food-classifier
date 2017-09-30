@@ -18,8 +18,25 @@ import numpy as np
 img_width, img_height = 150, 150
 
 model = load_model('./models/VegeModel5.h5')
+
 img = load_img('./data/train/avocado/avocado10.jpg', False, target_size=(img_width, img_height))
+x = img_to_array(img, data_format='channels_last')
+x = x / 255
+x = x.reshape((1,) + x.shape)
+print(x.shape)
+pred = model.predict(x)
+print(pred)
+
+img = load_img('./data/train/carrots/Carrot6.jpg', False, target_size=(img_width, img_height))
 x = img_to_array(img)
-x = np.expand_dims(x, axis=0)
+x = x / 255
+x = x.reshape((1,) + x.shape)
+pred = model.predict(x)
+print(pred)
+
+img = load_img('./data/train/kale/Kale.jpg', False, target_size=(img_width, img_height))
+x = img_to_array(img)
+x = x / 255
+x = x.reshape((1,) + x.shape)
 pred = model.predict(x)
 print(pred)
