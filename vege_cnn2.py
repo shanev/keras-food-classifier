@@ -1,3 +1,11 @@
+# Based on https://keras.io/applications/
+# Fine-tune InceptionV3 on a new set of classes
+
+# Issues
+# 
+# Error when converting:
+# ValueError: need more than 1 value to unpack
+
 from keras.applications.inception_v3 import InceptionV3
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
