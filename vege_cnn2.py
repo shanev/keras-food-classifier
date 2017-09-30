@@ -52,8 +52,8 @@ validation_data_dir = 'data/validation'
 # epochs = 50
 # batch_size = 16
 
-num_train_samples = 1760
-num_validation_samples = 240
+num_train_samples = 1380
+num_validation_samples = 180
 num_classes = 3
 epochs = 50
 batch_size = 16
