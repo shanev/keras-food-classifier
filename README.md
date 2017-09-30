@@ -41,3 +41,5 @@ http://machinethink.net/blog/yolo-coreml-versus-mps-graph/
 http://machinethink.net/blog/help-core-ml-gives-wrong-output/
 
 https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
+
+https://gist.github.com/fchollet/7eb39b44eb9e16e59632d25fb3119975
