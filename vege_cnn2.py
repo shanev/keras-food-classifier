@@ -46,16 +46,10 @@ from keras.utils.np_utils import to_categorical
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-top_model_weights_path = 'models/bottleneck_fc_model.h5'
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-# num_train_samples = 2000
-# num_validation_samples = 800
-# epochs = 50
-# batch_size = 16
-
-num_train_samples = 1380
-num_validation_samples = 180
+num_train_samples = 1376
+num_validation_samples = 176
 num_classes = 3
 epochs = 50
 batch_size = 16
@@ -93,11 +87,11 @@ def save_bottlebeck_features():
 def train_top_model():
   train_data = np.load(open('models/bottleneck_features_train.npy'))
   train_labels = np.array(
-    [0] * (num_train_samples / 2) + [1] * (num_train_samples / 2))
+    [0] * (num_train_samples / 2) + [2] * (num_train_samples / 2))
 
   validation_data = np.load(open('models/bottleneck_features_validation.npy'))
   validation_labels = np.array(
-    [0] * (num_validation_samples / 2) + [1] * (num_validation_samples / 2))
+    [0] * (num_validation_samples / 2) + [2] * (num_validation_samples / 2))
 
   model = Sequential()
   model.add(Flatten(input_shape=train_data.shape[1:]))
@@ -115,7 +109,8 @@ def train_top_model():
             epochs=epochs,
             batch_size=batch_size,
             validation_data=(validation_data, validation_labels))
-  model.save_weights(top_model_weights_path)
+  model.save('VegeModelBottleneck.h5')
+
 
 # save_bottlebeck_features()
 train_top_model()
