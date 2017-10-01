@@ -44,7 +44,7 @@ from keras import backend as K
 from keras.utils.np_utils import to_categorical
 
 # dimensions of our images.
-img_width, img_height = 150, 150
+img_width, img_height = 224, 224
 
 top_model_weights_path = 'models/bottleneck_fc_model.h5'
 
@@ -114,5 +114,5 @@ def train_top_model():
   model.save_weights(top_model_weights_path)
 
 
-# save_bottlebeck_features()
+save_bottlebeck_features()
 train_top_model()
