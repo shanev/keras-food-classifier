@@ -47,7 +47,7 @@ from keras.models import Model
 weights_path = 'models/vgg16_weights.h5'
 top_model_weights_path = 'models/bottleneck_fc_model.h5'
 # dimensions of our images.
-img_width, img_height = 150, 150
+img_width, img_height = 224, 224
 
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
@@ -59,8 +59,8 @@ batch_size = 16
 
 # build the VGG16 network
 # model = applications.VGG16(weights='imagenet', include_top=False)
-# model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
-model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3))
+model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+# model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3))
 print('Model loaded.')
 
 # build a classifier model to put on top of the convolutional model
@@ -68,7 +68,7 @@ top_model = Sequential()
 top_model.add(Flatten(input_shape=model.output_shape[1:]))
 top_model.add(Dense(256, activation='relu'))
 top_model.add(Dropout(0.5))
-top_model.add(Dense(3, activation='softmax'))
+top_model.add(Dense(num_classes, activation='softmax'))
 
 # note that it is necessary to start with a fully-trained
 # classifier, including the top classifier,
