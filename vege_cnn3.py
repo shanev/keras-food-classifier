@@ -54,7 +54,7 @@ validation_data_dir = 'data/validation'
 num_train_samples = 1376
 num_validation_samples = 176
 num_classes = 3
-epochs = 3
+epochs = 50
 batch_size = 16
 
 # build the VGG16 network
