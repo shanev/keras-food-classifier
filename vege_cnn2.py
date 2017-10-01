@@ -40,6 +40,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
 from keras import applications
+from keras import backend as K
 
 # dimensions of our images.
 img_width, img_height = 150, 150
@@ -91,11 +92,11 @@ def save_bottlebeck_features():
 def train_top_model():
   train_data = np.load(open('models/bottleneck_features_train.npy'))
   train_labels = np.array(
-    [0] * (num_train_samples / 2) + [2] * (num_train_samples / 2))
+    [0] * (num_train_samples / 3) + [2] * (num_train_samples / 3))
 
   validation_data = np.load(open('models/bottleneck_features_validation.npy'))
   validation_labels = np.array(
-    [0] * (num_validation_samples / 2) + [2] * (num_validation_samples / 2))
+    [0] * (num_validation_samples / 3) + [2] * (num_validation_samples / 3))
 
   model = Sequential()
   model.add(Flatten(input_shape=train_data.shape[1:]))
@@ -112,5 +113,5 @@ def train_top_model():
             validation_data=(validation_data, validation_labels))
   model.save_weights(top_model_weights_path)
 
-save_bottlebeck_features()
+# save_bottlebeck_features()
 train_top_model()
