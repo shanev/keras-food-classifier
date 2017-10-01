@@ -41,6 +41,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
+from keras.models import Model
 
 # path to the model weights files.
 weights_path = 'models/vgg16_weights.h5'
@@ -57,7 +58,9 @@ epochs = 50
 batch_size = 16
 
 # build the VGG16 network
-model = applications.VGG16(weights='imagenet', include_top=False)
+# model = applications.VGG16(weights='imagenet', include_top=False)
+# model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+model = applications.VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3))
 print('Model loaded.')
 
 # build a classifier model to put on top of the convolutional model
@@ -73,7 +76,8 @@ top_model.add(Dense(3, activation='softmax'))
 top_model.load_weights(top_model_weights_path)
 
 # add the model on top of the convolutional base
-model.add(top_model)
+# model.add(top_model)
+model = Model(inputs=model.input, outputs=top_model(model.output))
 
 # set the first 25 layers (up to the last conv block)
 # to non-trainable (weights will not be updated)
