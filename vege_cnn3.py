@@ -43,15 +43,16 @@ from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
 
 # path to the model weights files.
-weights_path = '../keras/examples/vgg16_weights.h5'
-top_model_weights_path = 'fc_model.h5'
+weights_path = 'models/vgg16_weights.h5'
+top_model_weights_path = 'models/bottleneck_fc_model.h5'
 # dimensions of our images.
 img_width, img_height = 150, 150
 
-train_data_dir = 'cats_and_dogs_small/train'
-validation_data_dir = 'cats_and_dogs_small/validation'
-nb_train_samples = 2000
-nb_validation_samples = 800
+train_data_dir = 'data/train'
+validation_data_dir = 'data/validation'
+num_train_samples = 1376
+num_validation_samples = 176
+num_classes = 3
 epochs = 50
 batch_size = 16
 
@@ -64,7 +65,7 @@ top_model = Sequential()
 top_model.add(Flatten(input_shape=model.output_shape[1:]))
 top_model.add(Dense(256, activation='relu'))
 top_model.add(Dropout(0.5))
-top_model.add(Dense(1, activation='sigmoid'))
+top_model.add(Dense(3, activation='softmax'))
 
 # note that it is necessary to start with a fully-trained
 # classifier, including the top classifier,
@@ -81,7 +82,7 @@ for layer in model.layers[:25]:
 
 # compile the model with a SGD/momentum optimizer
 # and a very slow learning rate.
-model.compile(loss='binary_crossentropy',
+model.compile(loss='categorical_crossentropy',
               optimizer=optimizers.SGD(lr=1e-4, momentum=0.9),
               metrics=['accuracy'])
 
@@ -97,19 +98,20 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 train_generator = train_datagen.flow_from_directory(
     train_data_dir,
     target_size=(img_height, img_width),
-    batch_size=batch_size,
-    class_mode='binary')
+    batch_size=batch_size)
 
 validation_generator = test_datagen.flow_from_directory(
     validation_data_dir,
     target_size=(img_height, img_width),
-    batch_size=batch_size,
-    class_mode='binary')
+    batch_size=batch_size)
 
 # fine-tune the model
 model.fit_generator(
     train_generator,
-    samples_per_epoch=nb_train_samples,
+    samples_per_epoch=num_train_samples,
     epochs=epochs,
     validation_data=validation_generator,
-    nb_val_samples=nb_validation_samples)
+    nb_val_samples=num_validation_samples)
+
+# save model
+mode.save('models/VegeModelFinetuned.h5')
