@@ -41,6 +41,7 @@ from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
 from keras import applications
 from keras import backend as K
+from keras.utils.np_utils import to_categorical
 
 # dimensions of our images.
 img_width, img_height = 150, 150
@@ -106,6 +107,9 @@ def train_top_model():
 
   model.compile(optimizer='adam',
                 loss='categorical_crossentropy', metrics=['accuracy'])
+
+  train_labels = to_categorical(train_labels)
+  validation_labels = to_categorical(validation_labels)
 
   model.fit(train_data, train_labels,
             epochs=epochs,
