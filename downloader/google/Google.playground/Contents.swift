@@ -38,16 +38,21 @@ struct Image: Decodable {
   }
 }
 
-URLSession.shared.dataTask(with: url) { (data, response, error) in
+URLSession.shared.dataTask(with: url) { (data, response, _) in
+  if let response = response as? HTTPURLResponse {
+    if response.statusCode == 403 {
+      print("Reached API limit")
+      PlaygroundPage.current.finishExecution()
+    }
+  }
+
   if let data = data {
     do {
       let response: Response = try JSONDecoder().decode(Response.self, from: data)
       let urls = response.items
         .map { $0.pageMap.image }
         .map { $0.first!.url }
-
       print(urls)
-
     } catch(let error) {
       print(error)
     }
@@ -57,3 +62,4 @@ URLSession.shared.dataTask(with: url) { (data, response, error) in
 }.resume()
 
 PlaygroundPage.current.needsIndefiniteExecution = true
+
