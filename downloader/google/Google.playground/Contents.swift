@@ -10,28 +10,49 @@ let start = 10
 let googleUrl = "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\(start)"
 let url = URL(string: googleUrl)!
 
+struct Response: Decodable {
+  let items: [Item]
+}
+
+struct Item: Decodable {
+  let pageMap: PageMap
+
+  enum CodingKeys: String, CodingKey {
+    case pageMap = "pagemap"
+  }
+}
+
+struct PageMap: Decodable {
+  let image: [Image]
+
+  enum CodingKeys: String, CodingKey {
+    case image = "cse_image"
+  }
+}
+
+struct Image: Decodable {
+  let url: URL
+
+  enum CodingKeys: String, CodingKey {
+    case url = "src"
+  }
+}
+
 URLSession.shared.dataTask(with: url) { (data, response, error) in
   if let data = data {
-    if let json = try? JSONSerialization.jsonObject(with: data) {
-      if let dictionary = json as? [String: Any] {
-        if let items = dictionary["items"] as? NSArray {
-          for item in items {
-            if let dict = item as? [String: Any] {
-              if let pagemap = dict["pagemap"] as? [String: Any] {
-                if let images = pagemap["cse_image"] as? NSArray {
-                  for image in images {
-                    if let imageUrl = image as? [String: Any] {
-                      print(imageUrl["src"]!)
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    do {
+      let response: Response = try JSONDecoder().decode(Response.self, from: data)
+      let urls = response.items
+        .map { $0.pageMap.image }
+        .map { $0.first!.url }
+
+      print(urls)
+
+    } catch(let error) {
+      print(error)
     }
   }
+
   PlaygroundPage.current.finishExecution()
 }.resume()
 
