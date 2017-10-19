@@ -3,7 +3,11 @@
 import Foundation
 import PlaygroundSupport
 
-let googleUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCle3vkXuwf0ET-UgCqAWz8NlojY_WV-NE&cx=014498682126902798498:sqnzmufwthi&q=potato"
+let apiKey = "AIzaSyCle3vkXuwf0ET-UgCqAWz8NlojY_WV-NE"
+let cx = "014498682126902798498:sqnzmufwthi"
+let query = "potato"
+let start = 10
+let googleUrl = "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\(start)"
 let url = URL(string: googleUrl)!
 
 URLSession.shared.dataTask(with: url) { (data, response, error) in
