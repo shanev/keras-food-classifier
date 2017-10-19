@@ -16,7 +16,19 @@ URLSession.shared.dataTask(with: url) { (data, response, error) in
     if let json = try? JSONSerialization.jsonObject(with: data) {
       if let dictionary = json as? [String: Any] {
         if let items = dictionary["items"] as? NSArray {
-          items.map { print($0) }
+          for item in items {
+            if let dict = item as? [String: Any] {
+              if let pagemap = dict["pagemap"] as? [String: Any] {
+                if let images = pagemap["cse_image"] as? NSArray {
+                  for image in images {
+                    if let imageUrl = image as? [String: Any] {
+                      print(imageUrl["src"]!)
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
