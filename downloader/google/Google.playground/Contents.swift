@@ -38,28 +38,46 @@ struct Image: Decodable {
   }
 }
 
-URLSession.shared.dataTask(with: url) { (data, response, _) in
-  if let response = response as? HTTPURLResponse {
-    if response.statusCode == 403 {
-      print("Reached API limit")
-      PlaygroundPage.current.finishExecution()
-    }
-  }
+//URLSession.shared.dataTask(with: url) { (data, response, _) in
+//  if let response = response as? HTTPURLResponse {
+//    if response.statusCode == 403 {
+//      print("Reached API limit")
+//      PlaygroundPage.current.finishExecution()
+//    }
+//  }
+//
+//  if let data = data {
+//    do {
+//      let response: Response = try JSONDecoder().decode(Response.self, from: data)
+//      let urls = response.items
+//        .map { $0.pageMap.images }
+//        .map { $0.first!.url }
+//      print(urls)
+//    } catch(let error) {
+//      print(error)
+//    }
+//  }
+//
+//  PlaygroundPage.current.finishExecution()
+//}.resume()
 
-  if let data = data {
+func downloadFile(at url:URL) {
+  let filename = url.lastPathComponent
+
+  URLSession.shared.downloadTask(with: url) { (url, response, error) in
     do {
-      let response: Response = try JSONDecoder().decode(Response.self, from: data)
-      let urls = response.items
-        .map { $0.pageMap.images }
-        .map { $0.first!.url }
-      print(urls)
-    } catch(let error) {
+      let fileUrl = playgroundSharedDataDirectory.appendingPathComponent(filename)
+      try FileManager.default.copyItem(at: url!, to: fileUrl)
+
+      PlaygroundPage.current.finishExecution()
+    } catch (let error) {
       print(error)
     }
-  }
+  }.resume()
+}
 
-  PlaygroundPage.current.finishExecution()
-}.resume()
+let imageUrl = URL(string: "https://www.potatogoodness.com/wp-content/uploads/2016/06/Asian-Potato-Salad-e1485804077924.jpg")!
+downloadFile(at: imageUrl)
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
