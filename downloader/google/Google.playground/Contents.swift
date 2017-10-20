@@ -23,10 +23,10 @@ struct Item: Decodable {
 }
 
 struct PageMap: Decodable {
-  let image: [Image]
+  let images: [Image]
 
   enum CodingKeys: String, CodingKey {
-    case image = "cse_image"
+    case images = "cse_image"
   }
 }
 
@@ -50,7 +50,7 @@ URLSession.shared.dataTask(with: url) { (data, response, _) in
     do {
       let response: Response = try JSONDecoder().decode(Response.self, from: data)
       let urls = response.items
-        .map { $0.pageMap.image }
+        .map { $0.pageMap.images }
         .map { $0.first!.url }
       print(urls)
     } catch(let error) {
