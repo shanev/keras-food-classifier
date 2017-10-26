@@ -49,6 +49,11 @@ func downloadFile(at url:URL) {
   }.resume()
 }
 
+// TODO
+// create all the google urls for start 1, 11, etc..
+// create all data tasks
+// start all
+
 URLSession.shared.dataTask(with: url) { (data, response, _) in
   if let response = response as? HTTPURLResponse {
     if response.statusCode == 403 {
