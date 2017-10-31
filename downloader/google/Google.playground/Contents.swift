@@ -6,7 +6,7 @@ import PlaygroundSupport
 let apiKey = "AIzaSyCle3vkXuwf0ET-UgCqAWz8NlojY_WV-NE"
 let cx = "014498682126902798498:sqnzmufwthi"
 let query = "potato"
-let start = 10
+let start = 1
 let googleUrl = "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\(start)"
 let url = URL(string: googleUrl)!
 
@@ -61,23 +61,34 @@ struct Image: Decodable {
 //  PlaygroundPage.current.finishExecution()
 //}.resume()
 
-func downloadFile(at url:URL) {
-  let filename = url.lastPathComponent
+//func downloadFile(at url:URL) {
+//  let filename = url.lastPathComponent
+//
+//  URLSession.shared.downloadTask(with: url) { (url, response, error) in
+//    do {
+//      let fileUrl = playgroundSharedDataDirectory.appendingPathComponent(filename)
+//      try FileManager.default.copyItem(at: url!, to: fileUrl)
+//
+//      PlaygroundPage.current.finishExecution()
+//    } catch (let error) {
+//      print(error)
+//    }
+//  }.resume()
+//}
+//
+//let imageUrl = URL(string: "https://www.potatogoodness.com/wp-content/uploads/2016/06/Asian-Potato-Salad-e1485804077924.jpg")!
+//downloadFile(at: imageUrl)
 
-  URLSession.shared.downloadTask(with: url) { (url, response, error) in
-    do {
-      let fileUrl = playgroundSharedDataDirectory.appendingPathComponent(filename)
-      try FileManager.default.copyItem(at: url!, to: fileUrl)
+let numPics = 1000
+let pageSize = 10
+let urls = (0 ..< numPics / pageSize)
+  .map { "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\($0 * pageSize + 1)" }
+print(urls)
 
-      PlaygroundPage.current.finishExecution()
-    } catch (let error) {
-      print(error)
-    }
-  }.resume()
+func fetchImageUrls(forQueryUrl url:URL) {
+
 }
 
-let imageUrl = URL(string: "https://www.potatogoodness.com/wp-content/uploads/2016/06/Asian-Potato-Salad-e1485804077924.jpg")!
-downloadFile(at: imageUrl)
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
