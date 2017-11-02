@@ -1,0 +1,163 @@
+{
+  "filename" : "1000753524_ae44d52bdb.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    375
+  ],
+  "objects" : [
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        179,
+        266,
+        24,
+        24
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        161,
+        278,
+        30,
+        29
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        119,
+        280,
+        34,
+        36
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        71,
+        285,
+        35,
+        33
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        36,
+        282,
+        26,
+        41
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        16,
+        280,
+        23,
+        33
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        149,
+        241,
+        37,
+        38
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        106,
+        242,
+        33,
+        40
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        65,
+        250,
+        39,
+        35
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        37,
+        248,
+        31,
+        37
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        125,
+        215,
+        33,
+        35
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        82,
+        221,
+        39,
+        30
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        59,
+        218,
+        30,
+        33
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        76,
+        193,
+        29,
+        22
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        92,
+        191,
+        29,
+        24
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        125,
+        189,
+        20,
+        29
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        99,
+        162,
+        30,
+        26
+      ]
+    }
+  ]
+}

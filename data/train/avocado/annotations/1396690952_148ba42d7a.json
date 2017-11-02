@@ -1,0 +1,118 @@
+{
+  "filename" : "1396690952_148ba42d7a.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    359
+  ],
+  "objects" : [
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        1,
+        138,
+        41,
+        106
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        125,
+        36,
+        85,
+        56
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        70,
+        69,
+        77,
+        63
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        1,
+        56,
+        80,
+        76
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        1,
+        122,
+        100,
+        44
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        297,
+        92,
+        126,
+        127
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        113,
+        93,
+        127,
+        95
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        181,
+        174,
+        132,
+        82
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        195,
+        8,
+        118,
+        105
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        319,
+        137,
+        182,
+        182
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        182,
+        243,
+        163,
+        117
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        44,
+        157,
+        150,
+        182
+      ]
+    }
+  ]
+}

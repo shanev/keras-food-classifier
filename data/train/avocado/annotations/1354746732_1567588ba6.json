@@ -1,0 +1,46 @@
+{
+  "filename" : "1354746732_1567588ba6.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    347
+  ],
+  "objects" : [
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        171,
+        228,
+        238,
+        118
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        314,
+        137,
+        136,
+        177
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        53,
+        117,
+        149,
+        212
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        141,
+        21,
+        194,
+        215
+      ]
+    }
+  ]
+}

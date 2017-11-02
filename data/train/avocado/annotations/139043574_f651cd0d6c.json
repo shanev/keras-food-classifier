@@ -1,0 +1,19 @@
+{
+  "filename" : "139043574_f651cd0d6c.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    350,
+    467
+  ],
+  "objects" : [
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        106,
+        149,
+        233,
+        90
+      ]
+    }
+  ]
+}

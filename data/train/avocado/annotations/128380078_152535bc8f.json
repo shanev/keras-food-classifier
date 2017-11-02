@@ -1,0 +1,28 @@
+{
+  "filename" : "128380078_152535bc8f.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    375
+  ],
+  "objects" : [
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        224,
+        23,
+        255,
+        153
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        30,
+        65,
+        367,
+        255
+      ]
+    }
+  ]
+}

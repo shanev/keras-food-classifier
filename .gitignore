@@ -100,3 +100,4 @@ ENV/
 
 # generated models
 /models
+.DS_Store
