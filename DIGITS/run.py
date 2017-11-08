@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import coremltools
 
 # Convert a caffe model to a classifier in Core ML
