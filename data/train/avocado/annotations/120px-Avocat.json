@@ -1,0 +1,19 @@
+{
+  "filename" : "120px-Avocat.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    120,
+    63
+  ],
+  "objects" : [
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        3,
+        1,
+        102,
+        63
+      ]
+    }
+  ]
+}

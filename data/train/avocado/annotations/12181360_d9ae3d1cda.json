@@ -1,0 +1,64 @@
+{
+  "filename" : "12181360_d9ae3d1cda.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    375
+  ],
+  "objects" : [
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        43,
+        54,
+        156,
+        52
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        214,
+        78,
+        95,
+        66
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        97,
+        104,
+        135,
+        71
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        252,
+        249,
+        104,
+        71
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        132,
+        159,
+        133,
+        97
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        10,
+        60,
+        378,
+        316
+      ]
+    }
+  ]
+}

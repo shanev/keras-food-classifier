@@ -1,0 +1,55 @@
+{
+  "filename" : "132230385_bdd236b027.jpg",
+  "folder" : "avocado",
+  "image_w_h" : [
+    500,
+    281
+  ],
+  "objects" : [
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        182,
+        165,
+        59,
+        115
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        248,
+        217,
+        138,
+        35
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        300,
+        91,
+        79,
+        30
+      ]
+    },
+    {
+      "label" : "unknown",
+      "x_y_w_h" : [
+        284,
+        119,
+        113,
+        42
+      ]
+    },
+    {
+      "label" : "avocado",
+      "x_y_w_h" : [
+        222,
+        105,
+        144,
+        159
+      ]
+    }
+  ]
+}

@@ -103,3 +103,4 @@ ENV/
 
 # cafe model
 /DIGITS/caffe_model/
+.DS_Store
