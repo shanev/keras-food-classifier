@@ -100,3 +100,6 @@ ENV/
 
 # generated models
 /models
+
+# cafe model
+/DIGITS/caffe_model/
