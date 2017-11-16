@@ -79,16 +79,18 @@ struct Image: Decodable {
 //let imageUrl = URL(string: "https://www.potatogoodness.com/wp-content/uploads/2016/06/Asian-Potato-Salad-e1485804077924.jpg")!
 //downloadFile(at: imageUrl)
 
-let numPics = 1000
-let pageSize = 10
-let urls = (0 ..< numPics / pageSize)
-  .map { "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\($0 * pageSize + 1)" }
-print(urls)
+//let numPics = 1000
+//let pageSize = 10
+//let urls = (0 ..< numPics / pageSize)
+//  .map { "https://www.googleapis.com/customsearch/v1?key=\(apiKey)&cx=\(cx)&q=\(query)&start=\($0 * pageSize + 1)" }
+//print(urls)
+//
+//func fetchImageUrls(forQueryUrl url:URL) {
+//
+//}
 
-func fetchImageUrls(forQueryUrl url:URL) {
-
-}
+let s = "Hello"
 
 
-PlaygroundPage.current.needsIndefiniteExecution = true
+//PlaygroundPage.current.needsIndefiniteExecution = true
 

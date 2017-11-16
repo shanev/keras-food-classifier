@@ -13,4 +13,4 @@ coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_
 
 # Now save the model
 coreml_model.author = "Shane Vitarana"
-coreml_model.save('../models/3Foods.mlmodel')
+coreml_model.save('../models/ThreeFoods.mlmodel')
