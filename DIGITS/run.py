@@ -3,7 +3,7 @@
 import coremltools
 
 # Convert a caffe model to a classifier in Core ML
-coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_60.caffemodel',
+coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_90.caffemodel',
   'caffe_model/deploy.prototxt',
   'caffe_model/mean.binaryproto'),
   image_input_names = 'data',
@@ -13,4 +13,4 @@ coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_
 
 # Now save the model
 coreml_model.author = "Shane Vitarana"
-coreml_model.save('../models/ThreeFoods.mlmodel')
+coreml_model.save('../models/FourFoods.mlmodel')
