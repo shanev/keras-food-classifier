@@ -1,45 +1,54 @@
-# Vegetable Classifier CNN in Keras
+## NVIDIA DIGITS CNN training
 
-Food classifier for souschef.ai.
+Based on http://reza.codes/2017-07-29/how-to-train-your-own-dataset-for-coreml/.
 
-## Training Data
+1. Compress image data
 
-### ImageNet
+`tar -zcvf food.tar.gz food`
 
-Currently used for training data at `data/train`.
+2. Upload to AWS
 
-`wget -O list_of_images.txt "http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=n02139199"`
+`aws s3 cp food.tar.gz s3://souschef.ai/data/food.tar.gz --acl public-read`
 
-`wget --timeout=1 --waitretry=1 --tries=2 --retry-connrefused -i list_of_images.txt`
+3. Start instance
 
-### Google Images
+`aws ec2 start-instances --instance-ids i-0ade0ef688dee181e`
 
-Currently used for validation data at `data/validation`
+4. Get instance public IP
 
-Use downloader in `downloader/google.py`.
+```
+aws ec2 describe-instances \
+  --query "Reservations[*].Instances[*].PublicIpAddress" \
+  --output=text | pbcopy
+```
 
-## Links
+5. Login to DIGITS and upload data
+```
+ssh -i ~/Documents/AWS/digits.pem ubuntu@[PUBLIC IP ADDRESS]
+cd data
+wget -O food.tar.gz "https://s3.amazonaws.com/souschef.ai/data/food.tar.gz"
+tar xvzf food.tar.gz
+chmod -R 0755 food
+```
 
-https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+Note: May need to add SSH inbound rule for MyIP in security policy.
 
-https://github.com/fchollet/keras/issues/4465
+6. Train model
 
-http://www.codesofinterest.com/2017/08/bottleneck-features-multi-class-classification-keras.html
+Folder: `/home/ubuntu/data/food/images`
 
-https://sriraghu.com/2017/07/12/computer-vision-in-ios-object-detection/
+Pretrained model: `/home/ubuntu/models/bvlc_alexnet.caffemodel`
 
-https://sriraghu.com/2017/07/06/computer-vision-in-ios-coremlkerasmnist/
+Use caffe.json: `DIGITS/caffe.json`
 
-https://willowtreeapps.com/ideas/integrating-trained-models-into-your-ios-app-using-core-ml
+7. Stop instance
 
-https://www.tooploox.com/blog/custom-classifiers-in-ios11-using-coreml-and-vision
+`aws ec2 stop-instances --instance-ids i-0ade0ef688dee181e`
 
-https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac
+8. Download model and convert to CoreML using `DIGITS/run.py`
 
-http://machinethink.net/blog/yolo-coreml-versus-mps-graph/
+9. Upload CoreML model to S3:
 
-http://machinethink.net/blog/help-core-ml-gives-wrong-output/
-
-https://machinelearningmastery.com/multi-class-classification-tutorial-keras-deep-learning-library/
-
-https://gist.github.com/fchollet/7eb39b44eb9e16e59632d25fb3119975
+```
+aws s3 cp models/Foods40.mlmodel s3://souschef.ai/coreml/Foods.mlmodel --acl public-read
+```
