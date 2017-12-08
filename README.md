@@ -39,7 +39,7 @@ Folder: `/home/ubuntu/data/food/images`
 
 Pretrained model: `/home/ubuntu/models/bvlc_alexnet.caffemodel`
 
-Use caffe.json: [https://raw.githubusercontent.com/shanev/keras-food-classifier/master/DIGITS/caffe.json?token=AABD0T-_kffeCCeVk2-dfYDDsfZZaHBAks5aNDvpwA%3D%3D]
+Use [caffe.json]([https://raw.githubusercontent.com/shanev/keras-food-classifier/master/DIGITS/caffe.json?token=AABD0T-_kffeCCeVk2-dfYDDsfZZaHBAks5aNDvpwA%3D%3D)
 
 7. Stop instance
 
