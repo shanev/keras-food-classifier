@@ -4,7 +4,10 @@ Based on http://reza.codes/2017-07-29/how-to-train-your-own-dataset-for-coreml/.
 
 1. Compress image data
 
-`tar -zcvf food.tar.gz food`
+```
+cd ~/Dropbox/SousChef/data
+tar -zcvf food.tar.gz food
+```
 
 2. Upload to AWS
 
