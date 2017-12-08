@@ -27,6 +27,7 @@ aws ec2 describe-instances \
 
 5. Login to DIGITS and upload data
 ```
+cd ~/Projects/MachineLearning/keras/food
 ssh -i DIGITS/digits.pem ubuntu@[PUBLIC IP ADDRESS]
 cd data
 wget -O food.tar.gz "https://s3.amazonaws.com/souschef.ai/data/food.tar.gz"
