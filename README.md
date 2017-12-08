@@ -49,10 +49,15 @@ Use [caffe.json](https://raw.githubusercontent.com/shanev/keras-food-classifier/
 
 `aws ec2 stop-instances --instance-ids i-0ade0ef688dee181e`
 
-8. Download model and convert to CoreML using `DIGITS/run.py`
+8. Download model and convert to CoreML
+
+```
+source activate coreml
+cd DIGITS && python run.py
+```
 
 9. Upload CoreML model to S3:
 
 ```
-aws s3 cp models/Foods40.mlmodel s3://souschef.ai/coreml/Foods.mlmodel --acl public-read
+aws s3 cp ../models/Foods40.mlmodel s3://souschef.ai/coreml/Foods.mlmodel --acl public-read
 ```

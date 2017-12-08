@@ -3,7 +3,7 @@
 import coremltools
 
 # Convert a caffe model to a classifier in Core ML
-coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_720.caffemodel',
+coreml_model = coremltools.converters.caffe.convert(('caffe_model/snapshot_iter_900.caffemodel',
   'caffe_model/deploy.prototxt',
   'caffe_model/mean.binaryproto'),
   image_input_names = 'data',
