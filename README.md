@@ -39,6 +39,8 @@ Note: May need to add SSH inbound rule for MyIP in security policy.
 
 6. Train model
 
+Go to IP address in previous step for DIGITS web interface.
+
 Folder: `/home/ubuntu/data/food/images`
 
 Pretrained model: `/home/ubuntu/models/bvlc_alexnet.caffemodel`
