@@ -61,6 +61,10 @@ Model name: Foods
 
 8. Download model and convert to CoreML
 
+Unzip to DIGITS/caffe_model
+
+Modify run.py with new model name, i.e: `snapshot_iter_1230.caffemodel`
+
 ```
 source activate coreml
 cd DIGITS && python run.py
@@ -69,5 +73,5 @@ cd DIGITS && python run.py
 9. Upload CoreML model to S3:
 
 ```
-aws s3 cp ../models/Foods40.mlmodel s3://souschef.ai/coreml/Foods.mlmodel --acl public-read
+aws s3 cp ../models/Foods.mlmodel s3://souschef.ai/coreml/Foods.mlmodel --acl public-read
 ```
